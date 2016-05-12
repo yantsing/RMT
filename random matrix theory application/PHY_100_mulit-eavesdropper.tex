@@ -1,0 +1,923 @@
+
+%% bare_conf.tex
+%% V1.4a
+%% 2014/09/17
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8a or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_conf_compsoc.tex,
+%%                    bare_jrnl_compsoc.tex, bare_jrnl_transmag.tex
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices and paper sizes can       ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[journal]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/tex-archive/info/epslatex/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Do not use the stfloats baselinefloat ability as IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepac_jage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/dblfloatfix/
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{cite,times,amsmath,epsfig,algorithmic,array}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+%\usepackage{psfig}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+%\usepackage{intmacros}
+\usepackage{epstopdf}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Robust Transmission Design for MISO Wiretap Channel with Cooperative Jamming}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{
+%\IEEEauthorblockN{Yanqing Liu, Liang Dong and Robert J. Marks II}
+%\IEEEauthorblockA{Department of Electrical and Computer Engineering\\
+%Baylor University, Waco, Texas \\
+%Email: \{yanqing\_liu, liang\_dong, robert\_marks\}@baylor.edu}
+%}
+
+\author{
+\IEEEauthorblockN{Author 1, Author 2 and Author 3}
+%\IEEEauthorblockA{Department of Electrical and Computer Engineering\\
+%Baylor University, Waco, Texas \\
+%Email: \{yanqing\_liu, liang\_dong, robert\_marks\}@baylor.edu}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+A communication network is considered that consists of a transmitters, a legitimate receiver, several eavesdroppers and a network of friendly helpers. When the transmitter establishes secure communication with the legitimate receiver, the friendly helpers send noise to confuse the eavesdroppers. The transmitter and the helpers are equipped with multiple antennas while the legitimate receiver and the eavesdroppers have single antenna.  The transmitter and the helpers know the channels to the legitimate receiver. The channels to the eavesdropper are partially known and modeled with uncertainty ellipsoids.  The transmitter applies maximum ratio transmission to the legitimate receiver.  Robust transmit covariance matrices of the helpers are obtained based on the total transmit power minimization, under the worst-case secrecy rate requirements. A distributed algorithm is developed with moderate network signaling is developed.
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% no \IEEEPARstart
+
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+In wireless communication, security is a major concern due to the broadcast nature of wireless channels. Instead of cryptography such as encryption, physical layer security can be used.
+One type of physical layer security is to optimize the transmit strategy of the transmitter. Li~\emph{et al.} investigate the  transmit covariance optimization for secrecy-rate maximization. The non-convex problem is approximated and transformed to convex optimization problem that can be solved via semidefinite program (SDP). And imperfect channels are considered \cite{li_optimal_2011}.
+Another type of physical layer security methods uses artificial noise to degrade the performance of the eavesdropper. Chae~\emph{et~al.} assume there is a secrecy protected zone. The additional secrecy enhancement is realized using artificial noise and optimal power allocation between the information-bearing signal and the artificial noise is derived \cite{chae2014enhanced}.  Lin~\emph{et al.} assume perfect legitimate channel state information (CSI), and the statistics of the eavesdropper's channel are known. A generalized artificial noise method allowing injection the artificial noise to the legitimate channel is proposed \cite{lin2013secrecy}.
+
+%Qin \emph{et al.} consider the discrete channel inputs and investigate the power allocation and artificial noise design for OFDM wiretap channels \cite{qin2013power}.
+
+Cooperative jamming (CJ) has also been studied. This approach uses friendly helpers to provide artificial noise to degrade receiver performance of the eavesdroppers \cite{cooperative_jamming,huang_cooperative_2011,dong_improving_2010,li_cooperative_2011,zheng_optimal_2011,liao_qos-based_2011}. In practice the only partial CSI can be got especially for eavesdroppers’ CSI (ECSI).  Huang~\emph{et al.} study the cooperative jamming with one helper with imperfect ECSI\cite{huang_robust_2012}. Zhang~\emph{et al.} investigate CJ aided robust secure transmission design, where a cooperative jammer introduces jamming interferences and assists a source to supply wireless power for both an energy receiver and a legitimate destination\cite{Zhang_Cooperative2015}. 
+
+In this paper, we consider the robust secure communication problem with cooperative jamming.  Different from \cite{huang_robust_2012,Zhang_Cooperative2015}, we consider the case where there are multiple eavesdroppers and multiple helpers. The helpers only send artificial nosie to assist the transmitter and legitimate receiver. The optimal noise covariance matrices based on sum transmit power minimization with worst-case secrecy rate constraints are obtained. A distributed algorithm with moderate network signaling is proposed. 
+% The helpers effectively confuse the eavesdropper compared with the approach of artificial noise generated by the transmitter.  This is because the helpers are usually not collocated with the transmitter.  The tradeoff is the coordination requirement of the helpers and the transmitter.  More helpers improve the secure communication performance at a cost of more stringent coordination requirement. 
+We assume that the channels toward the eavesdropper are not perfectly known.  The uncertainties of the eavesdropper's channels are described with an ellipsoid model.   Given a required value of the achievable secrecy rate, the transmit strategies of the helpers are optimized and a distributed algorithm is developed for transmission of a large number of helpers. 
+
+%The remainder of the paper is organized as follows.  The system model is described in Section II.  In Section III, the uncertainties of the eavesdropper's channels are described and an algorithm for optimal helper transmission is proposed based on robust convex optimization.  In Section IV, a distributed algorithm is further developed in order to reduce implementation complexity.  Numerical results are given in Section V and conclusions are drawn in Section VI.
+
+\section{System Model} \label{sec:system model}
+Consider a network composed of a intended transmitter, a legitimate receiver, $K$ eavesdroppers and $N$ friendly Helpers, as shown in Fig.~\ref{fig:system}. The intended transmitter and the helpers are equipped with $N_t$ and $N_h$ antennas, respectively. The legitimate receiver and the eavesdroppers are equipped with single antenna. For convenience, we call the $i$-th Helper Helper-$i$ and the $k$-th eavesdropper Eve-$k$.
+
+\subsection{Signal Transmission and Cooperative Jamming}
+The transmitter sends confidential signal to the legitimate receiver. Different from the CJ schemes in \cite{huang_robust_2012,Zhang_Cooperative2015}, the $N$ helpers send artificial noise to degrade the receiving performance of $K$ eavesdroppers.  More helpers can improve the effect of degrading the eavesdroppers' channels. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=8.7cm]{system.png} % requires the graphicx package
+	\caption{Communication scenario}
+	\label{fig:system}
+\end{figure}
+
+The transmitter transmits confidential signal  $\mathbf{x}_0 \in \mathbb{C}^{N_t \times 1}$. Helpers broadcast artifical noise. Denote $\mathbf{x}_i$ is the interference transmitted by Helper-$i$. Then the received signal of the legitimate receiver $y^b$ is
+\begin{eqnarray} \label{eq:received_signal_receiver}
+y^b =\mathbf{h}_{0}^{H}\mathbf{x}_0 + \sum_{i=1}^N \mathbf{h}_{i}^H\mathbf{x}_{i} + n_b,
+\end{eqnarray}
+where $\mathbf{h}_0 \in \mathbb{C}^{N_t \times 1}$ is the channel between the transmitter and the legitimate receiver; $\mathbf{h}_i \in \mathbb{C}^{N_h \times 1}$ is the channel vectors from the Helper-$i$ to the legitimate receiver. $\mathbf{h}_0$ and $\mathbf{h} \forall i = 1,\cdots,N$ are available. In \eqref{eq:received_signal_receiver}, $\mathbf{x}_0 \sim \mathcal{N}(\mathbf{0}, \mathbf{Q}_0)$ and $\mathbf{x}_0 \sim \mathcal{N}(\mathbf{0}, \mathbf{Q}_0)$ where $\mathbf{Q}_0 \succeq \mathbf{0}$ and $\mathbf{Q}_i$ are the transmit covariance matrices of $\mathbf{x}_0$ and $\mathbf{x}_i$, respectively. And the transmit power constraints at the transmitte and Helpers are
+\begin{equation}
+\text{Tr}\left(\mathbf{Q}_0\right)\leq P_0
+\end{equation} 
+\begin{equation}
+\text{Tr}\left(\mathbf{Q}_i\right) \leq P_i, \forall i = 1,\cdots,N.
+\end{equation} 
+
+The signal-to-interference-plus-noise ratio of the legitimate receiver is
+\begin{eqnarray} \label{eq:SINR of Bob}
+\mathrm{SINR}^b = \frac{\left| \mathbf{h}_{0}^H\mathbf{x}_{0}\right|^2}{\sigma_n^2 + \sum_{i=1}^{N}\mathbf{h}_{i}^H\mathbf{Q}_{i}\mathbf{h}_i}.
+\end{eqnarray}
+
+The received signal of the $k$th eavesdropper $y^e_k$ is
+\begin{eqnarray}
+y_{k}^e = \mathbf{g}_{k0}^H\mathbf{w}x_0 + \sum_{i = 1}^N\mathbf{g}_{ki}^H\mathbf{x}_i + n^e_i,
+\end{eqnarray}
+where $\mathbf{g}_{k0} \in \mathbb{C}^{N_t \times 1}$ is the dimensional channel response between the transmitter and the legitimate receiver; $\mathbf{g}_{ki} \in \mathbb{C}^{N_h \times 1}$ is the channel response from Helper-$i$ to EVE-$k$. $n^e_i \sim \mathcal{N}(0,\sigma_e^2)$ is the additive noise at the Eve-$i$.  
+The signal-to-interference-plus-noise ratio of Eve-$k$ is
+\begin{eqnarray}
+\mathrm{SINR}^e_k &=& \frac{\left| \mathbf{g}_{k0}^H\mathbf{w}_{0}\right|^2}{\sigma_m^2 + \sum_{i=1}^{N}\mathbf{g}_{ki}^H\mathbf{Q}_{i}\mathbf{g}_{ki}} \label{eq:secure_capacity}.
+\end{eqnarray}
+
+The achievable secrecy rate at Bob is given by \cite{6728676}
+\begin{equation}
+R_s = \min_{k = 1,\cdots,K}\log_2\left(1 + \mathrm{SINR}^b\right)-\log_2\left(1 + \mathrm{SINR}^e_k\right).
+\end{equation}
+
+
+\subsection{Channel Uncertainties} \label{sec:Channel Uncertainties}
+%When the eavesdropper is active \cite{gopala2008secrecy,feng_miso}, Alice and the helpers can determine the channels. When the eavesdropper is passive, the channels can be estimated through the local oscillator power inadvertently leaked from the eavesdropper's receiver radio frequency frontend \cite{mukherjee2012detecting,feng_miso}. 
+Like \cite{huang_robust_2012}, for the channels  between transmitter and  Eve, only estimates $\bar{\mathbf{g}}_{ki}$ are available at the transmitter and Helpers. We assume the channel uncertainties of channel responses $\mathbf{g}_{ki}$ lie in elliptical regions, denoted as $\mathcal{G}_{ki}$
+\begin{eqnarray}
+\mathcal{G}_{ki} = \{\mathbf{g}_{ki}|\mathbf{g}_{ki} = \bar{\mathbf{g}}_{ki} + \tilde{\mathbf{g}}_{ki}, \tilde{\mathbf{g}}_{ki}^H \mathbf{R}_{ki}\tilde{\mathbf{g}}_{ki} \leq 1\},\forall i = 0,\ldots, N,
+\end{eqnarray}
+The hermitian positive semi-definite  matrix $\mathbf{R}_{ki}$ defines the qualities of ECSI. 
+
+When there is one eavesdroper, the covariance matrices of the transmitted sigal and artificial noise can be jointly optimized using the methods in \cite{huang_robust_2012,Zhang_Cooperative2015}. But when there is several eavesdroppers, it is hard to implement the secure communitiaon using these method. Considering worst-case channels, our objective is, given the transmit covariance matrix $\mathbf{Q}_0$, to find the most energy efficient jamming strategy of the helpers satisfying the QoS constrants, which guarantee the required serecy rates,i.e.,
+\begin{equation}
+\begin{aligned} \label{eq:objective}
+& \underset{\{\mathbf{Q}_i\}}{\text{minimize}}
+& & \sum_{i = 1}^{N}\text{Tr}\left(\mathbf{Q}_i\right)\\
+& \text{subject to}
+& &    R_s \geq R,\\
+& & & \mathbf{Q}_i \succeq \mathbf{0}.
+\end{aligned}
+\end{equation}
+
+
+\section{Robust Convex Optimization of Secure Communication} \label{sec:robust programming}
+
+%\begin{eqnarray}
+%&&\mathrm{E}(\|\mathbf{h}_i^H\mathbf{x}_i\|_2^2)\nonumber\\
+%&=&\mathrm{E}(\mathbf{h}_i^H\mathbf{x}_i\mathbf{x}_i^H\mathbf{h}_i)\nonumber\\
+%&=&\mathbf{h}_i^H\mathbf{Q}_i \mathbf{h}_i = 0, \forall i = 1,\ldots,N \label{eq:ZF_constraint_relaxed}.
+%\end{eqnarray}
+
+\subsection{Transmit Strategy of Alice}
+In this paper, the basic idea of the transmit strategy of the system is to let the transmitter maximize the signal-to-interference-plus-noise ratio of the legitimate receiver, and leave the job of guaranteeing secure communication to the Helpers by generating noise to Eve. From \eqref{eq:SINR of Bob} and \eqref{eq:ZF constraint} The signal-to-interference-plus-noise ratio of Bob is 
+\begin{eqnarray}
+\mathrm{SINR}^b= \frac{\left| \mathbf{h}_{0}^H\mathbf{w}\right|^2}{\sigma_n^2 }. 
+\end{eqnarray}
+%$\mathrm{SINR}_b$ is not dependent on the transmit covariance matrices of the helpers. 
+The optimal transmission strategy of Alice is maximum ratio transmission (MRT) and the corresponding beamformer follows as
+\begin{eqnarray}
+\mathbf{w} = \sqrt{P_0}\frac{\mathbf{h}_0}{\|\mathbf{h}_0\|_2} \label{eq:optimal_w}.
+\end{eqnarray}
+In other words, $\mathbf{Q}_0 = \mathbf{w}\mathbf{w}^H$
+
+
+%The signal-to-interference-plus-noise ratio of Bob is
+%\begin{eqnarray} 
+%\mathrm{SINR}_b= \frac{P_0\| \mathbf{h}_{0}\|_2^2}{\sigma_n^2 }.  \label{eq:SINR_b}
+%\end{eqnarray}
+
+\subsection{Transmit Strategies of the Helpers}
+Helpers use zero forcing (ZF) method to transmit noise to the evesdroppers and eliminate interference to the legitimate receiver.
+%The ZF constraint is 
+%\begin{eqnarray}
+%\mathbf{h}_i^H\mathbf{x}_i =0 , \forall i = 1,\dots, N\label{eq:ZF_constraint}.
+%\end{eqnarray}
+The ZF constraint can be expressed as
+\begin{eqnarray} \label{eq:ZF constraint}
+\mathbf{h}_i^H\mathbf{Q}_i \mathbf{h}_i = 0, \forall i = 1,\ldots,N \label{eq:ZF_constraint_relaxed}.
+\end{eqnarray}
+The signal-to-interference-plus-noise ratio of Eve-$k$ can be bounded as
+\begin{eqnarray}
+\mathrm{SINR}_k^e & < & \frac{\left| \mathbf{g}_{k0}^H\mathbf{w}_{0}\right|^2}{\sum_{i=1}^{N}\mathbf{g}_{ki}^H\mathbf{Q}_{i}\mathbf{g}_{ki}} \label{eq:neglect_sigma}\\
+%&=& \frac{\left|\bar{\mathbf{g}}_0^H\mathbf{w_0} + \tilde{\mathbf{g}}_0^H\mathbf{w}_0\right|^2}{\sum_{i = 1}^N(\bar{\mathbf{g}}+\tilde{\mathbf{g}}_i)^H\mathbf{Q}_i(\bar{\mathbf{g}}+\tilde{\mathbf{g}}_i)}\\
+&\leq & \frac{\left|\bar{\mathbf{g}}_{k0}^H\mathbf{w}\right|^2 + \left|\tilde{\mathbf{g}}_{k0}^H\mathbf{w}\right|^2}{\sum_{i = 1}^N(\bar{\mathbf{g}}+\tilde{\mathbf{g}}_{ki})^H\mathbf{Q}_i(\bar{\mathbf{g}}+\tilde{\mathbf{g}}_{ki})}\\
+%&\leq & \frac{\left|\bar{\mathbf{g}}_0^H\mathbf{w_0}\right|^2 + \tilde{\mathbf{g}}_0^H\mathbf{w}_0\mathbf{w}_0^H\tilde{\mathbf{g}}_0}{\sum_{i = 1}^N(\bar{\mathbf{g}}+\tilde{\mathbf{g}}_i)^H\mathbf{Q}_i(\bar{\mathbf{g}}+\tilde{\mathbf{g}}_i)}\\
+& \leq & \frac{\left|\bar{\mathbf{g}}_{k0}^H\mathbf{w}\right|^2 + \max_{\tilde{\mathbf{g}}_{ki} \in \mathcal{G}_i}(\tilde{\mathbf{g}}_{k0}^H\mathbf{w}\mathbf{w}^H\tilde{\mathbf{g}}_{k0})}{\sum_{i = 1}^N(\bar{\mathbf{g}}_{ki}+\tilde{\mathbf{g}}_{ki})^H\mathbf{Q}_i(\bar{\mathbf{g}}_{ki}+\tilde{\mathbf{g}}_{ki})} .
+\label{eq:SINR_e}
+\end{eqnarray}
+%In \eqref{eq:neglect_sigma}, the noise is removed. This is because we consider the case where Eve has the best possible receiving performance. 
+In order to satisfy the Quality of Service (QoS) constraint of Problem \eqref{eq:objective}, the maximum signal-to-interference-plus-noise ratio of Eve-$k$ should be limited, i.e.
+\begin{eqnarray}
+\max \mathrm{SINR}_k^e \leq \gamma_k \label{eq:SINR_constraint},
+\end{eqnarray} 
+where $\gamma_k$ is the limit. Given the QoS constraint, the predefined limit $\gamma_k$ can be determined from 
+\begin{eqnarray}
+R \geq \log_2\left(1 + P_0\|\mathbf{h}_0\|_2^2/\sigma_n^2\right) - \log_2\left(1 + \gamma_k\right). \label{eq:modified constraints of QoS}
+\end{eqnarray}
+
+In order to guarantee the maximum $\mathrm{SINR}_k^e$ to be within the predetermined limit $\gamma_k$, the maximum numerator of \eqref{eq:SINR_e} is calculated first by putting \eqref{eq:optimal_w} in \eqref{eq:SINR_e}. We obtain
+\begin{equation}
+\begin{aligned} \label{eq:numerator problem}
+& \underset{\tilde{\mathbf{g}}_{0}}{\text{maximize}}
+& & \frac{P_0}{\|\mathbf{h}_0\|_2^2}|\bar{\mathbf{g}}_{k0}^H\mathbf{h}_0|^2 +\frac{P_0}{\|\mathbf{h}_0\|_2^2} \tilde{\mathbf{g}}_{k0}^H\mathbf{h}_0\mathbf{h}_0^H\tilde{\mathbf{g}}_{k0} \\
+& \text{subject to}
+& & \tilde{\mathbf{g}}_{k0}^H\mathbf{R}_{k0}\tilde{\mathbf{g}}_{k0} \leq 1.
+\end{aligned}
+\end{equation}
+Let $\lambda_{\mathrm{max}}(\mathbf{R})$ be the largest eigenvalue of $\mathbf{R}$, then
+\begin{eqnarray}
+\lambda_{\mathrm{max}}(\mathbf{R})= \max_{\mathbf{y}^H\mathbf{y} \leq 1} \mathbf{y}^H\mathbf{R}\mathbf{y}.
+\end{eqnarray}
+%If we define $\mathbf{R}_0^{1/2}\tilde{\mathbf{g}}_0 = \hat{\mathbf{g}}_0$, problem \eqref{eq:numerator problem} is transformed to the following problem
+%\begin{equation}
+%\begin{aligned} \label{eq:numerator problem1}
+%& \underset{\hat{\mathbf{g}}_{0}}{\text{maximize}}
+%& & \frac{P_0}{\|\mathbf{h}_0\|_2^2}|\bar{\mathbf{g}}_0^H\mathbf{h}_0|^2 +\frac{P_0}{\|\mathbf{h}_0\|_2^2} \hat{\mathbf{g}}_0^H\mathbf{R}_0^{-1/2}\mathbf{h}_0\mathbf{h}_0^H\mathbf{R}_0^{-1/2}\hat{\mathbf{g}}_0 \\
+%& \text{subject to}
+%& & \hat{\mathbf{g}_0}^H\hat{\mathbf{g}}_0 \leq 1.
+%\end{aligned}
+%\end{equation}
+Then the maximum of \eqref{eq:numerator problem} is
+\begin{eqnarray}
+&&\frac{P_0}{\|\mathbf{h}_0\|_2^2}\left(|\bar{\mathbf{g}}_{k0}^H\mathbf{h}_0|^2 + \lambda_{\mathrm{max}}(\mathbf{R}_{k0}^{-1/2}\mathbf{h}_0\mathbf{h}_0^H\mathbf{R}_{k0}^{-1/2})\right)\\
+&=&\frac{P_0}{\|\mathbf{h}_0\|_2^2}\left(|\bar{\mathbf{g}}_{k0}^H\mathbf{h}_0|^2 + \|\mathbf{R}_{k0}^{-1/2}\mathbf{h}_0\|_2^2\right)\label{eq:eigen_norm},
+\end{eqnarray} 
+where \eqref{eq:eigen_norm} follows from the fact that the rank of $\mathbf{R}_0^{-1/2}\mathbf{h}_0$ is 1. Then the constraint of maximum $\mathrm{SINR}_e$ \eqref{eq:SINR_constraint}  is relaxed to
+\begin{eqnarray} \label{eq:sum_noise}
+\min_{\{\tilde{\mathbf{g}}_{ki} \in \mathcal{G}_{ki} \}}\sum_{i=1}^{N}(\bar{\mathbf{g}}_{ki}+\tilde{\mathbf{g}}_{ki})^H\mathbf{Q}_i(\bar{\mathbf{g}}_{ki}+\tilde{\mathbf{g}}_{ki}) \geq \Gamma_k  \label{eq:artificial noise constraint},
+\end{eqnarray}
+where $\Gamma_k =\frac{P_0\left(|\bar{\mathbf{g}}_0^H\mathbf{h}_0|^2 + \|\mathbf{R}_{k0}^{-1/2}\mathbf{h}_0\|_2^2\right)}{\|\mathbf{h}_0\|_2^2\gamma_k}$ denotes the total minimum interference that needs to be generated by Helpers to the eavesdroppers. Then Problem \eqref{eq:objective} can be transformed to 
+\begin{equation}
+\begin{aligned} \label{eq:central_problem1}
+& \underset{\{\mathbf{Q}_i \succeq \mathbf{0}\}}{\text{maximize}}
+& & \sum_{i = 1}^{N}\mathrm{Tr}(\mathbf{Q}_i) \\
+& \text{subject to}
+& & \mathrm{Tr}(\mathbf{Q}_i) \leq P_i, \forall i = 1, \ldots, N\\
+&&& \mathbf{h}_i^H \mathbf{Q}_i \mathbf{h}_i= 0, \forall i = 1,\ldots,N\\
+&&& \min_{\{\mathbf{g}_{ki} \in \mathcal{G}_{ki} \}}\sum_{i=1}^{N}\mathbf{g}_{ki}\mathbf{Q}_i\mathbf{g}_{ki} \geq  \Gamma_k,\\
+&&& \forall k = 1, \ldots, K.
+\end{aligned}
+\end{equation}
+%Denote $\mathbf{g}_k = [\mathbf{g}_{k1}^T,\cdots,\mathbf{g}_{kN}^T]^T$,$\mathbf{Q} = \text{diag}[\mathbf{Q}_{1}^T,\cdots,\mathbf{Q}_{N}^T]^T$ and $\mathbf{R}_k = \text{diag}[\mathbf{R}_{k1},\cdots,\mathbf{R}_{kN}]$, $\mathbf{G}_k = \{\mathbf{g}_k|\mathbf{g}_k = \bar{\mathbf{g}}_k + \tilde{\mathbf{g}}_k,\tilde{\mathbf{g}}\mathbf{R}_k\tilde{\mathbf{g}}_k \leq 1\}$. The Problem \eqref{eq:central_problem1} is equivalent to 
+%\begin{equation}
+%\begin{aligned} \label{eq:central_problem1}
+%& \underset{\{\mathbf{Q} \succeq \mathbf{0}\}}{\text{maximize}}
+%& & \mathrm{Tr}(\mathbf{Q}) \\
+%& \text{subject to}
+%& & \mathrm{Tr}(\mathbf{Q}) \leq P_i, \forall i = 1, \ldots, N\\
+%&&& \mathbf{h}^H \mathbf{Q} \mathbf{h}= 0, \forall i = 1,\ldots,N\\
+%&&& \min_{\{\mathbf{g}_{k} \in \mathcal{G}_{k} \}}\mathbf{g}_{k}\mathbf{Q}\mathbf{g}_{k} \geq  \Gamma_k,\\
+%&&& \forall k = 1, \ldots, K.
+%\end{aligned}
+%\end{equation}
+
+
+
+
+
+Constraint~\eqref{eq:sum_noise} can be decomposed into $N+1$ constraints by introducing the new variables $\tau_{ki}, i =1,\ldots,N$, the physical meaning of which are the minimum interferences that the $N$ helpers need to generate to Eve-$k$ respectively. The decomposed constraints follow as:
+\begin{eqnarray}
+&\underset{\mathbf{g}_{ki} \in \mathcal{G}_{ki} }\min\mathbf{g}_{ki}\mathbf{Q}_i\mathbf{g}_{ki} \geq  \tau_{ki}, \forall i = 1,\ldots,N\label{eq:artificial noise constraint decomposed} \label{eq:qos_eve_helper}\\
+&\sum_{i =1}^{N}\tau_{ki} \geq \Gamma_k \label{eq:sum_noise_constraint}.
+\end{eqnarray}
+According to the S-Procedure \cite{ConvexOpt_Boyd}, Constraint \eqref{eq:artificial noise constraint decomposed}  in the linear matrix inequality (LMI) form is
+\begin{eqnarray}
+\left[ {\begin{array}{cc}
+	\lambda_{ki}\mathbf{R}_{ki}+\mathbf{Q}_{i}  & \mathbf{Q}_{ki}\bar{\mathbf{g}}_{ki} \\
+	\bar{\mathbf{g}}_{ki}^H\mathbf{Q}_{i}& \bar{\mathbf{g}}_{ki}^H\mathbf{Q}_i\bar{\mathbf{g}}_{ki}- \tau_{ki} -\lambda_{ki}\\
+	\end{array} } \right] \succeq \mathbf{0},
+\end{eqnarray}
+where $\lambda_{ki} \geq 0$ is a new variable introduced by S-procedure.
+Then Problem \eqref{eq:central_problem1} is transformed to
+
+
+%
+%
+%
+%Then problem \eqref{eq:problem1} can be transformed to the following problem
+\begin{equation}
+\begin{aligned} \label{eq:problem2}
+& \underset{\{\mathbf{Q}_i,\tau_{ki},\lambda_{ki}\}}{\text{minimize}}
+& & \sum_{i = 1}^{N}\mathrm{Tr}(\mathbf{Q}_i) \\
+& \text{subject to}
+& & \mathrm{Tr}(\mathbf{Q}_i) \leq P_i, \forall i = 1, \ldots, N\\
+&&& \mathbf{h}_i^H \mathbf{Q}_i \mathbf{h}_i= 0, \forall i = 1,\ldots,N\\
+&&&\mathbf{Q}_i \succeq \mathbf{0},i = 1,\ldots,N\\
+&&& \left[ {\begin{array}{cc}
+	\lambda_{ki}\mathbf{R}_{ki}+\mathbf{Q}_{i}  & \mathbf{Q}_{i}\bar{\mathbf{g}}_{ki} \\
+	\bar{\mathbf{g}}_{ki}^H\mathbf{Q}_{i}& \bar{\mathbf{g}}_{ki}^H\mathbf{Q}_i\bar{\mathbf{g}}_{ki}- \tau_{ki} -\lambda_{ki}\\
+	\end{array} } \right] \succeq \mathbf{0},\\
+&&&\forall i = 1,\ldots,N \text{~and~} k = 1,\cdots,K\\
+&&&\sum_{i =1}^{N}\tau_{ki} \geq \Gamma_k, \forall k =1,\cdots,K\\
+&&&\tau_{ki} \geq 0, \lambda_{ki} \geq 0,\\
+&&&\forall i = 1,\ldots,N \text{~and~} k = 1,\cdots,K\\
+\end{aligned}
+\end{equation}
+
+%The implication of \eqref{eq:artificial noise constraint decomposed} is
+%\begin{eqnarray}
+%\tilde{\mathbf{g}}_i^H\mathbf{R}_i\tilde{\mathbf{g}} _i - 1\leq 0  \Rightarrow (\bar{\mathbf{g}}_i+\tilde{\mathbf{g}}_i)^H\mathbf{Q}_i(\bar{\mathbf{g}}_i+\tilde{\mathbf{g}}_i) - \tau_i \geq 0.
+%\end{eqnarray}
+ Then Problem \eqref{eq:problem2} can be solved using convex optimization tools such as CVX\cite{cvx}.
+
+%So problem \eqref{eq:problem2} can be transformed to the following problem
+%\begin{equation}
+%\begin{aligned} \label{eq:problem3}
+%& \underset{\{\mathbf{Q}_i\},\{\lambda_i\},\{\tau_i\}}{\text{maximize}}
+%& & \sum_{i = 1}^{N}\mathrm{Tr}(\mathbf{Q}_i) \\
+%& \text{subject to}
+%& & \mathrm{Tr}(\mathbf{Q}_i) \leq P_i, \forall i = 1, \ldots, N\\
+%&&& \mathbf{h}_i^H \mathbf{Q}_i \mathbf{h}_i= 0, \forall i = 1,\ldots,N\\
+%&&& \left[ {\begin{array}{cc}
+%	\lambda_i\mathbf{R}_i+\mathbf{Q}_i  & \mathbf{Q}_i\bar{\mathbf{g}}_i \\
+%	\bar{\mathbf{g}}_i^H\mathbf{Q}_i & \bar{\mathbf{g}}_i^H\mathbf{Q}_i\bar{\mathbf{g}}_i - \tau_i -\lambda_i
+%	\end{array} } \right] \succeq \mathbf{0},\\
+%&&& \forall i = 1, \ldots, N\\
+%&&&\sum_{i =1}^{N}\tau_i \geq \Gamma.
+%\end{aligned}
+%\end{equation}
+%
+%Problem \eqref{eq:problem2} and \eqref{eq:problem3} are equivalent. By solving problem \eqref{eq:problem3} using convex optimization tools such as CVX\cite{cvx}, we can solve the secure communication problem.
+
+%Based on the solved covariance matrices,  $M$ dimensional noise $\mathbf{x}_i$ can be generated and sent out by Jammer-$i$. The transmitted signal of Jammer-$i$ is 
+%\begin{eqnarray}
+%\mathbf{x}_i = \mathbf{Q}_i^{1/2}\mathbf{r}_i.
+%\end{eqnarray} 
+%$\mathbf{r}_i = [r_{i1},\ldots,r_{iM}]^T$ is Gaussian noise such that $\mathbf{r}_i \sim \mathcal{N}(\mathbf{0},\mathbf{I})$, where $[\cdot]^T$ means transpose operation, and $\mathbf{I}$ is an $M \times M$ identity matrix. 
+%The block diagram of the transmitter of Jammer-$i$ is shown in Fig.~\ref{fig:transmitter}, where the random noise generators generate independent noise waveforms.
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=8.8cm]{transmitter.pdf} % requires the graphicx package
+%	\caption{Block diagram of the transmitter of Jammer-$i$}
+%	\label{fig:transmitter}
+%\end{figure}
+
+\section{Distributed algorithm} \label{sec:distributed algorithm}
+Solving problem \eqref{eq:problem2} requires a central unit. to collect all the channel information and calculate the covariance matrices of all the helpers. When the number of helpers increases, the centralized algorithm dose not scale well. 
+In this section, we analyze the structure of the problem and propose a distributed algorithm. 
+
+Using dual-decompositon methods, Problem \eqref{eq:problem2} can be divided into two levels of optimization. At the lower level,  Helper-$i$ solves the local convex subproblem as
+\begin{equation}
+\begin{aligned} \label{eq:subproblem}
+& \underset{\{\mathbf{Q}_i \tau_{ki},\lambda_{ki}\}}{\text{minimize}}
+& & \mathrm{Tr}(\mathbf{Q}_i) - \sum_{k = 1}^{K}\mu_k\tau_{ki}\\
+& \text{subject to}
+& & \mathrm{Tr}(\mathbf{Q}_i) \leq P_i\\
+&&& \mathbf{h}_i^H \mathbf{Q}_i \mathbf{h}_i= 0\\
+&&& \left[ {\begin{array}{cc}
+	\lambda_{ki}\mathbf{R}_{ki}+\mathbf{Q}_{i}  & \mathbf{Q}_{i}\bar{\mathbf{g}}_{ki} \\
+	\bar{\mathbf{g}}_{ki}^H\mathbf{Q}_{i}& \bar{\mathbf{g}}_{ki}^H\mathbf{Q}_i\bar{\mathbf{g}}_{ki}- \tau_{ki} -\lambda_{ki}\\
+	\end{array} } \right] \succeq \mathbf{0},\\
+&&& k = 1,\cdots,K\\
+&&&\tau_{ki} \geq 0, \lambda_{ki} \geq 0, \forall k = 1, \cdots,K\\
+&&&\mathbf{Q}_i \succeq \mathbf{0}
+\end{aligned}
+\end{equation}
+where $\mu_k$ is the dual variable with respect to constraint \eqref{eq:sum_noise_constraint}.
+
+At the higher level, dual variables $\mu_k$ are updated according to subgradiant method as
+\begin{eqnarray}
+\mu_k(t+1) = \left[\mu_k(t) + \alpha\left(\Gamma_k - \sum_{i = 1}^{N}\tau_{ki}^*\right)\right]^+ 
+\end{eqnarray}
+where $\tau_{ki}$ is the optimal solution of  subproblem \eqref{eq:subproblem}.The 
+
+
+
+\section{Numerical Results} \label{sec:numerical results}
+The radio network in Fig.~\ref{fig:system} was simulated. Alice and the helpers have four transmit antennas each. The channel from Alice to Bob is randomly selected and normalized. The channels from the helpers to Bob and from the transmitters to Eve are randomly generated such that $\|\mathbf{h}_i\| = \alpha$ and $\|\bar{\mathbf{g}}_i\| = \beta$. $\alpha,\beta\in  [0.1,10]$ are independent uniformly distributed random variables.
+%, which is used to simulate the random distance from the transmitters to Bob and Eve. 
+Positive hermitian matrix $\mathbf{R}_i$ is randomly generated, and $\|\mathbf{R}_i\|_F = s$. Simulation parameter $s$ defines the size of the eavesdropper's channel uncertainty. The larger $s$ is, the smaller the channel uncertainty is. 
+For simplicity, we assume Alice and all the helpers have the same transmit power. 
+%That is $P_0=P_i = P$. 
+The noise variance of Bob is normalized to 1. We set $\mathrm{SNR}_b = 20 \mathrm{dB}$, which means $P = 100$.
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=8.8cm]{Changing_Cs.eps} % requires the graphicx package
+	\caption{Relationship of total transmit power with required secrecy rates.}
+	\label{fig:Changing_Cs}
+\end{figure}
+
+Fig.~\ref{fig:Changing_Cs} shows the relationship between the total transmit power and the required achievable secrecy rate. Simulation parameter is set $s = 1$. When there are more helpers, the total transmit power is lower. 
+%It is because that there are more strategies for the helpers to choose to generate noise. 
+When the requirement of achievable secrecy rate is higher, more total transmit power is needed to generate enough noise to confuse the eavesdropper. %In the simulation, compared to the transmit power limit of each helper, the actual total transmit power of the helpers is small. %It means on average, the helpers only need small transmit power to generate noise to the eavesdropper.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=8.8cm]{Changing_s.eps} % requires the graphicx package
+	\caption{Relationship of total transmit power with the simulation parameter $s$.}
+	\label{fig:Changing_s}
+\end{figure}
+
+Fig.~\ref{fig:Changing_s} shows  the relationship between the total transmit power and the simulation parameter $s$. In this simulation, we fix the secrecy rate requirement $R_s \geq 3 $ b/s/Hz. When $s$ is small, which means the uncertainty is large, the helpers need more power to transmit noise to realize the required secure communication. This is because when the uncertainty is larger, the helpers need to transmit more noise to make sure that the performance of the eavesdropper can be degraded enough to guarantee the achievable secrecy rate for all the possible eavesdropper's channels.
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=8.8cm]{Cs_success.eps} % requires the graphicx package
+%	\caption{Relationship of successfully realizing secure communication with required secrecy rates.}
+%	\label{fig:Cs_success}
+%\end{figure}
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=8.8cm]{s_success.eps} % requires the graphicx package
+%	\caption{Relationship of successfully realizing secure communication with the simulation parameter $s$.}
+%	\label{fig:s_success}
+%\end{figure}
+%
+%The jammers may still not be able to realize required secure communication. Fig.~\ref{fig:Cs_success} and Fig.~\ref{fig:s_success} show the relationship of successfully realizing the required secure communication with the secrecy rate requirement and the eavesdropper's channel uncertainty. For Fig.~\ref{fig:Cs_success}, we fix the simulation parameter $s = 1$. For Fig.~\ref{fig:s_success} we fix the required secrecy rate $R_s \geq 3$ b/s/Hz. It can be shown that higher secrecy rate requirement and larger channel uncertainty will cause less success rate of the required secure communication. But by increasing the number of helpers and using the distributed algorithm proposed in Section \ref{sec:distributed algorithm} which scales well with a large number of helpers, we can increase the success rate of secure communication easily. 
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{Conclusion} \label{sec:conclusion}
+This paper discusses a method to implement secure communication. The channels from the intended transmitter and the helpers to the intended receiver are known. But the channels to the eavesdropper are imperfectly known. The intended transmitter uses MRT to maximize the signal-to-interference-plus-noise ratio of the intended receiver. The helpers transmit noise to degrade the performance of the eavesdropper to guarantee the required secrecy rate. The structure of the transmitted noise is exploited and the transmit strategies of the helpers are formulated as a robust convex optimization problem, in which the transmit covariance matrices are the optimization variables. Based on the solved transmit covariances of the helpers, the required secure communication can be implemented. In order to ease the implementation of secure communication, a distributed algorithm, which scales well with a large number of helpers, is proposed. Simulation results show that with the aid of the helpers, robust secure communication can be realized.
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,PHY}
+%\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+

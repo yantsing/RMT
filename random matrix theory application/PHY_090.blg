@@ -1,0 +1,16 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: PHY_090.aux
+The style file: IEEEtran.bst
+Database file #1: IEEEabrv.bib
+Database file #2: PHY.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty year in wolf_zero_2010
+Warning--empty journal in fakoorian_solutions_2011
+Warning--empty year in fakoorian_solutions_2011
+Warning--empty journal in pei_adaptive_2014
+Warning--empty year in pei_adaptive_2014
+Warning--empty year in mukherjee2012detecting
+
+Done.
+(There were 6 warnings)

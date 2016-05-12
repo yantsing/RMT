@@ -1,0 +1,20 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: PHY.aux
+The style file: IEEEtran.bst
+Database file #1: IEEEabrv.bib
+Database file #2: PHY.bib
+Repeated entry---line 477 of file PHY.bib
+ : @article{tekin2008general
+ :                          ,
+I'm skipping whatever remains of this entry
+Illegal end of database file---line 784 of file PHY.bib
+ :  file = {IEEE Xplore Abstract Record:files/795/abs_all.html:text/html;IEEE Xplore Full Text PDF:files/794/Pei 等. - 2014 - Adaptive Limited Feedback for MISO Wiretap Channel.pdf:application/pdf}
+ :                                                                                                                                                                                                    
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "7015632"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty year in mukherjee2012detecting
+
+Done.
+(There were 2 error messages)
